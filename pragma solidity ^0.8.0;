@@ -1,0 +1,22 @@
+// Пример контракта на Solidity
+
+pragma solidity ^0.8.0;
+
+contract SimpleContract {
+    // Переменная состояния
+    uint public myNumber;
+
+    // Событие
+    event NumberUpdated(uint newValue);
+
+    // Функция для установки значения переменной состояния
+    function setNumber(uint _newValue) public {
+        myNumber = _newValue;
+        emit NumberUpdated(_newValue);
+    }
+
+    // Функция для получения текущего значения переменной состояния
+    function getNumber() public view returns (uint) {
+        return myNumber;
+    }
+}
